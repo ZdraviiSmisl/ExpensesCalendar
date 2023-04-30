@@ -1,0 +1,6 @@
+/*Since thise file is related to castom wrap component "Card"  we take out here the common styles from wrapped componensts and tags. From "expenses.css" and expense-item at the moment */
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
