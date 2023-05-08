@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   /*There are two aprouches for updating the state: first -slices for ehach part of state separatly,second -through an object in with we store all parts of state. Both  ot these approaches occure in various projects  */
 
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -51,8 +51,7 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate), //pass data from date inpout to newDate() instence for converting the date string to the date object
     };
-    console.log(expenseData);
-
+    props.onAddExpenseDate(expenseData);
     //And of cource after submiting all the necessary information needs to be cleared
     setEnteredTitle("");
     setEnteredAmount("");
