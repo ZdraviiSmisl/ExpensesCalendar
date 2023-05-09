@@ -4,7 +4,7 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm.js";
 
 const NewExpense = (props) => {
-  const addNewEpenseDateHandler = (enteredExpenseData) => {
+  const addNewExpenseDateHandler = (enteredExpenseData) => {
     const newExpenseData = {
       ...enteredExpenseData,
       id: String(Date.now()).slice(-10),
@@ -13,7 +13,7 @@ const NewExpense = (props) => {
   };
   return (
     <div className="new-expense">
-      <ExpenseForm onAddExpenseDate={addNewEpenseDateHandler} />
+      <ExpenseForm onAddExpenseDate={addNewExpenseDateHandler} />
     </div>
   );
 };
