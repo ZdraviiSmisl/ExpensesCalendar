@@ -5,11 +5,11 @@ import ExpenseForm from "./ExpenseForm.js";
 
 const NewExpense = (props) => {
   const addNewExpenseDateHandler = (enteredExpenseData) => {
-    const newExpenseData = {
+    const expenseData = {
       ...enteredExpenseData,
       id: String(Date.now()).slice(-10),
     };
-    props.onAddExpense(newExpenseData);
+    props.onAddExpense(expenseData);
   };
   return (
     <div className="new-expense">

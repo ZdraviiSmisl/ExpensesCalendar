@@ -16,7 +16,7 @@ const ExpenseForm = (props) => {
   // });
 
   //Using a second way we have to pass old state for the rest parts in each handler or we lost them becouse after changing the  specified part of state others will be replace by nothing
-  const titleChageHangler = (event) => {
+  const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
     // setUserInput({
     //   ...userInput,
@@ -59,14 +59,14 @@ const ExpenseForm = (props) => {
   };
 
   return (
-    <form action="" method="POST" onSubmit={submitHandler}>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <label className="new-expense__label">
           Title
           <input
             className="new-expense__input"
             type="text"
-            onChange={titleChageHangler}
+            onChange={titleChangeHandler}
             value={enteredTitle}
           />
         </label>
