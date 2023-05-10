@@ -6,6 +6,9 @@ import ExpensesFilter from "../Expenses/ExpensesFilter";
 
 const ExpensesList = (props) => {
   const [year, setYear] = useState("2020");
+  const filteredByYear = props.items.filter(
+    (item) => item.date.getFullYear().toString() === year
+  );
 
   const addYearExpenseHandler = (choosenYear) => {
     setYear(choosenYear);
@@ -18,8 +21,14 @@ const ExpensesList = (props) => {
           onAddYearExpense={addYearExpenseHandler}
           selectedYear={year}
         />
-        {props.items.map((expense) => (
+        {/* {props.items.filter(
+          (expense) =>
+            // console.log(expense.date.getFullYear())
+            expense.date.getFullYear() === year
+        )} */}
+        {filteredByYear.map((expense) => (
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}

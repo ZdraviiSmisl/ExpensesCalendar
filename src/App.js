@@ -32,7 +32,7 @@ const App = () => {
     //Since in that case when we add new expense to our state, it depends on previous state,so we have to use a callbakc functioin for updatetig previouse stsate
 
     setExpenses((prevExpenses) => {
-      return [...prevExpenses, expense];
+      return [expense, ...prevExpenses];
     });
   };
 
