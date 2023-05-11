@@ -6,6 +6,11 @@
   text-align: left;
 }
 
+.new-expense__hide {
+  position: absolute;
+  transform: scale(0);
+}
+
 .new-expense__label {
   font-weight: bold;
   margin-bottom: 0.5rem;

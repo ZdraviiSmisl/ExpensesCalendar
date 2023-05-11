@@ -36,6 +36,7 @@ const ExpenseForm = (props) => {
     //   enteredAmount: event.target.value,
     // });
   };
+
   const dateChageHangler = (event) => {
     setEnteredDate(event.target.value);
     // setUserInput({
@@ -56,8 +57,19 @@ const ExpenseForm = (props) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+    // setOpened(false);
   };
 
+  // if (!opened)
+  //   return (
+  //     <div>
+  //       <button onClick={openFormHandler} type="button">
+  //         Add New Expense
+  //       </button>
+  //     </div>
+  //   );
+
+  // if (opened)
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
@@ -94,6 +106,9 @@ const ExpenseForm = (props) => {
         </label>
       </div>
       <div className="new-expense__actions">
+        <button onClick={props.onCancel} type="button">
+          cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
