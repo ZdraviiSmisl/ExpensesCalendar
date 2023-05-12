@@ -49,7 +49,7 @@ const ExpenseForm = (props) => {
     //We create an object with the data wich geather from all inputs and the submmit it to the server
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate), //pass data from date inpout to newDate() instence for converting the date string to the date object
     };
     props.onAddExpenseDate(expenseData);
